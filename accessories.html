@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Géminis Clothing - Accesorios</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .catalog {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .item {
+            width: 200px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+        }
+        .item-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .item p {
+            margin: 5px 0;
+        }
+        .add-to-cart {
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #cart-icon {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #cart-icon span {
+            font-size: 14px;
+            background-color: red;
+            border-radius: 50%;
+            padding: 2px 5px;
+            margin-left: 5px;
+        }
+        #checkout-button {
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <img src="images/elpn.png" alt="Logo" id="logo">
+        <h1><em>Géminis</em> <strong>Clothing</strong></h1>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="new-launches.html">NUEVOS LANZAMIENTOS</a></li>
+            <li><a href="accessories.html">ACCESORIOS</a></li>
+            <li><a href="plus-size.html">PLUS SIZE</a></li>
+            <li><a href="about-us.html">NOSOTRXS</a></li>
+            <li><a href="contact.html">CONTACTANOS</a></li>
+        </ul>
+    </nav>
+    
+    <main id="body">
+        <h2>Accesorios</h2>
+        <p>Encuentra accesorios únicos y elegantes que complementen tu estilo personal. Desde joyería hasta otros complementos, tenemos lo que necesitas para destacar.</p>
+        <p>Explora nuestras colecciones de accesorios y encuentra el toque perfecto para tu atuendo.</p>
+        <div class="catalog">
+            <div class="item">
+                <img src="images/anillo.jpg" alt="Anillo">
+                <div class="item-info">
+                    <p>Anillo</p>
+                    <p>$15.00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(15)">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="images/aros de oro.jpg" alt="Aros de Oro">
+                <div class="item-info">
+                    <p>Aros de Oro</p>
+                    <p>$20.00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(20)">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="images/collar.jpg" alt="Collar">
+                <div class="item-info">
+                    <p>Collar</p>
+                    <p>$25.00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(25)">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="images/silvercollar.jpg" alt="Silver Collar">
+                <div class="item-info">
+                    <p>Silver Collar</p>
+                    <p>$30.00</p>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(30)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div id="cart-icon" onclick="redirectToCheckout()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+
+        <button id="checkout-button" onclick="redirectToCheckout()">Ir al Checkout</button>
+    </main>
+
+    <script>
+        let cartCount = 0;
+        let cartTotal = 0;
+
+        function addToCart(price) {
+            cartCount++;
+            cartTotal += price;
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+
+        function redirectToCheckout() {
+            if (cartCount > 0) {
+                localStorage.setItem('cartCount', cartCount);
+                localStorage.setItem('cartTotal', cartTotal.toFixed(2));
+                window.location.href = 'checkout.html';
+            } else {
+                alert('Tu carrito está vacío.');
+            }
+        }
+    </script>
+</body>
+</html>

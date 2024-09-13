@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Géminis Clothing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header id="header">
+        <img src="images/elpn.png" alt="Logo" id="logo">
+        <h1><em>Géminis</em> <strong>Clothing</strong></h1>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="new-launches.html">NUEVOS LANZAMIENTOS</a></li>
+            <li><a href="accessories.html">ACCESORIOS</a></li>
+            <li><a href="plus-size.html">PLUS SIZE</a></li>
+            <li><a href="about-us.html">NOSOTRXS</a></li>
+            <li><a href="contact.html">CONTACTANOS</a></li>
+        </ul>
+    </nav>
+    <main id="body">
+        <h2>Bienvenid@ a Géminis Clothing</h2>
+        <p>Descubre nuestra colección de ropa plus size diseñada para realzar tu belleza y estilo. Aquí encontrarás opciones modernas y elegantes para cada ocasión.</p>
+        <p>Explora nuestros lanzamientos más recientes y encuentra el ajuste perfecto para ti.</p>
+        
+        <!-- Sección que se ocultará/mostrará -->
+        <div id="more-text" class="hidden">
+            <p>En Géminis Clothing, nos esforzamos por ofrecerte prendas que no solo te hagan lucir bien, sino que también te hagan sentir segura y cómoda. Cada pieza está cuidadosamente diseñada y seleccionada para asegurarnos de que se ajuste perfectamente a ti.</p>
+            <p>Te invitamos a explorar nuestra colección y descubrir las prendas que mejor se adapten a tu estilo y necesidades. ¡Gracias por elegirnos!</p>
+        </div>
+        
+        <p class="more"><a href="#" id="explore-link" onclick="toggleText()">Explorar más</a></p>
+    </main>
+    <section id="black-tl">
+        <div class="black-box">
+            <h2><em>Plus Size</em> Collections</h2>
+            <img src="images/favicon.jpg" alt="Plus Size Collection">
+            <p>Descubre nuestra variedad de ropa plus size en <a href="plus-size.html">Géminis Clothing</a>.</p>
+            <p class="more">&gt;&gt; <a href="plus-size.html">Ver más</a></p>
+        </div>
+        <div class="black-box">
+            <h2><em>Accesorios</em></h2>
+            <img src="images/aros de oro.jpg" alt="Accessories">
+            <p>Encuentra accesorios que complementen tu estilo en <a href="accessories.html">Géminis Clothing</a>.</p>
+            <p class="more">&gt;&gt; <a href="accessories.html">Ver más</a></p>
+        </div>
+        <div class="black-box">
+            <h2><em>Ofertas Especiales</em></h2>
+            <img src="images/ofertas.jpg" alt="Special Offers">
+            <p>No te pierdas nuestras ofertas especiales en ropa y más <a href="#">.</p>
+            <p class="more">
+        </div>
+    </section>
+    <footer id="footer">
+        <div id="tips">
+            <!-- contenido del footer -->
+        </div>
+    </footer>
+
+    <script>
+        function toggleText() {
+            var moreText = document.getElementById("more-text");
+            var exploreLink = document.getElementById("explore-link");
+            
+            if (moreText.classList.contains("hidden")) {
+                moreText.classList.remove("hidden");
+                exploreLink.textContent = "Mostrar menos";
+            } else {
+                moreText.classList.add("hidden");
+                exploreLink.textContent = "Explorar más";
+            }
+        }
+    </script>
+</body>
+</html>
